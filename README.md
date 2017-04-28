@@ -5,7 +5,12 @@ Do whatever this doc says to get started.
 # Getting started
 
 1. Clone this repo
-2. Install postgresql and setup the db
+2. Install [golang](https://golang.org/dl/). Go lang 1.8 was used
+at the time of writing this README.
+3. Install postgresql. You can install either with `brew install postgresql@9.6`
+or go [here](https://www.postgresql.org/download/).
+
+4. Setup the db
 
 ```
 # create a db for yourself
@@ -28,4 +33,8 @@ create database "todo" with encoding='UTF8' owner="todouser" connection limit=-1
 \q
 ```
 
-3.
+4. Install `migrate` to manage the database migrations
+
+```
+
+```
