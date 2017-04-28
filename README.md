@@ -2,7 +2,7 @@
 
 Do whatever this doc says to get started.
 
-# Get started
+# Getting started
 
 1. Clone this repo
 2. Install postgresql and setup the db
@@ -28,4 +28,4 @@ create database "todo" with encoding='UTF8' owner="todouser" connection limit=-1
 \q
 ```
 
-3. 
+3.
