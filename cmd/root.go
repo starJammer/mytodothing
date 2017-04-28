@@ -67,9 +67,9 @@ func initConfig() {
 		viper.SetConfigFile(cfgFile)
 	}
 
-	viper.SetConfigName(".") // name of config file (without extension)
-	viper.AddConfigPath(".") // adding only current dir as search path
-	viper.AutomaticEnv()     // read in environment variables that match
+	viper.SetConfigName("mytodo") // name of config file (without extension)
+	viper.AddConfigPath(".")      // adding only current dir as search path
+	viper.AutomaticEnv()          // read in environment variables that match
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {

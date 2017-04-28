@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/starJammer/go-postgres-gokit-cobra-migrate/cmd"
+import "github.com/starJammer/mytodothing/cmd"
 
 func main() {
 	cmd.Execute()
