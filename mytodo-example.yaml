@@ -1,3 +1,6 @@
 db:
   user: todouser
   password: password00
+
+migrations:
+  path: ./migrations

@@ -33,8 +33,48 @@ create database "todo" with encoding='UTF8' owner="todouser" connection limit=-1
 \q
 ```
 
-4. Install `migrate` to manage the database migrations
+4. Install a few tools for go that will help during development
 
 ```
+# used for managing dependencies for go and getting them into the vendor directory
+go get -u github.com/govend/govend
+govend
+go get -u github.com/variadico/scaneo
+go get -u -d github.com/mattes/migrate/cli
 
+# If you don't have $GOPATH set then use /usr/local/bin/migrate instead
+go build -tags 'postgres' -o $GOPATH/bin/migrate github.com/mattes/migrate/cli
+```
+
+5. Run database migrations
+
+```
+migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslmode=disable&password=password00" up
+```
+
+# Typical things you'll do
+
+## Create a new migration file
+
+```
+go run main.go migrations new -n "name_of_migration"
+```
+
+## Run migrations
+
+```
+# update to the latest
+migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslmode=disable&password=password00" up
+
+# undo the last migration
+migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslmode=disable&password=password00" down
+
+# drop all migrations
+migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslmode=disable&password=password00" drop
+```
+
+## Update vendor directory
+
+```
+govend
 ```
