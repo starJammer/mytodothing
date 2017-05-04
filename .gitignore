@@ -22,3 +22,12 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+# Vim files
+#
+*~
+
+# Sensitive config files
+
+sqlboiler.yaml
+mytodo.yaml
