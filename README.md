@@ -52,7 +52,15 @@ govend
 
 ```
 
-5. Run database migrations
+5. Create config files for your machine by copying and editing the example
+files.
+
+```
+cp mytodo-example.yaml mytodo.yaml
+cp sqlboiler.example.yaml sqlboiler.yaml
+```
+
+6. Run database migrations
 
 ```
 migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslmode=disable&password=password00" up
