@@ -36,14 +36,20 @@ create database "todo" with encoding='UTF8' owner="todouser" connection limit=-1
 4. Install a few tools for go that will help during development
 
 ```
-# used for managing dependencies for go and getting them into the vendor directory
-go get -u github.com/govend/govend
-govend
-go get -u github.com/variadico/scaneo
-go get -u -d github.com/mattes/migrate/cli
+# Cobra, necessary for adding commands
+go get -v github.com/spf13/cobra/cobra
 
+# used for managing dependencies for go and getting them into the vendor directory
+go get -u -d github.com/mattes/migrate/cli
 # If you don't have $GOPATH set then use /usr/local/bin/migrate instead
 go build -tags 'postgres' -o $GOPATH/bin/migrate github.com/mattes/migrate/cli
+
+go get -u -t github.com/vattle/sqlboiler
+go get -u github.com/govend/govend
+govend
+
+
+
 ```
 
 5. Run database migrations
@@ -77,4 +83,18 @@ migrate -path migrations -database "postgres://todouser@localhost:5432/todo?sslm
 
 ```
 govend
+```
+
+## Run SQLBoiler to generate models
+
+```
+# Never edit anything in the models folder
+sqlboiler postgres
+```
+
+## Add a new cobra command
+
+```
+cobra add [command]
+cobra add [command] -p [parent_command]
 ```

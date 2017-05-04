@@ -1,0 +1,11 @@
+blacklist: ["schema_migrations"]
+schema: public
+pkgname: models
+output: models
+postgres:
+  dbname: todo
+  host: localhost
+  port: 5432
+  user: todouser
+  pass: password00
+  sslmode: disable
