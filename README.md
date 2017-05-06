@@ -45,6 +45,7 @@ go get -u -d github.com/mattes/migrate/cli
 go build -tags 'postgres' -o $GOPATH/bin/migrate github.com/mattes/migrate/cli
 
 go get -u -t github.com/vattle/sqlboiler
+go get github.com/jackc/pgx
 go get -u github.com/govend/govend
 govend
 
